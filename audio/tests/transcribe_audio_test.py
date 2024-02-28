@@ -1,13 +1,9 @@
 import pytest
 
-from audio.transcribe_audio import (
-    transcribe_audio,
-    meeting_minutes,
-    abstract_summary_extraction,
-    key_points_extraction,
-    action_item_extraction,
-    sentiment_analysis,
-)
+from sentiment_analysis import *
+from save_as_docx import *
+from transcription import *
+from main import *
 
 @pytest.fixture
 def sample_transcription():
@@ -16,7 +12,7 @@ def sample_transcription():
 
 def test_transcribe_audio(sample_transcription):
     # Test transcribe_audio function
-    result = transcribe_audio("path/to/your/audio/file.wav")
+    result = transcribe_audio("audio/audio.ogg")
     assert isinstance(result, str)
 
 def test_abstract_summary_extraction(sample_transcription):

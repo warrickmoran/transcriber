@@ -1,3 +1,5 @@
 openai
 python-docx
 black
+pytest
+python-dotenv
